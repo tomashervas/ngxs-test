@@ -1,0 +1,17 @@
+
+<div style="text-align:center">
+    <h1>
+      Welcome to NGXS Todo App!
+    </h1>
+  </div>
+  <div>
+    <input [(ngModel)]="newTodoTitle" placeholder="New Todo" />
+    <button (click)="addTodo()">Add Todo</button>
+  </div>
+  <ul>
+    <li *ngFor="let todo of todos$ | async">
+      <span [style.textDecoration]="todo.completed ? 'line-through' : 'none'">{{ todo.title }}</span>
+      <button (click)="toggleTodo(todo.id)">Toggle</button>
+      <button (click)="removeTodo(todo.id)">Remove</button>
+    </li>
+  </ul>

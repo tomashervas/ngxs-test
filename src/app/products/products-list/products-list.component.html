@@ -1,0 +1,10 @@
+<h2>Lista de Productos</h2>
+    <!-- <button (click)="loadProducts()">Cargar Productos</button> -->
+    <ul>
+      <li *ngFor="let product of products$ | async">
+        {{ product.name }} - {{ product.price | currency }}
+        <button (click)="updateProduct(product)">Actualizar</button>
+        <button (click)="deleteProduct(product.id)">Eliminar</button>
+      </li>
+    </ul>
+    <button (click)="addProduct()">Añadir Nuevo Producto</button>
